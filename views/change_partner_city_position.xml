@@ -1,6 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <openerp>
     <data>
-        <!--- TODO [IMP] -->
+        <record  model="ir.ui.view" id="res_partner_form_city_02">
+            <field name="name">res.partner.form_city_02</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="city.res_partner_form_city_01"/>
+            <field name="arch" type="xml">
+                <field name="city_id" position="replace"/>
+                <field name="city" position="before">
+                    <field name="city_id" on_change="onchange_city(city_id)"  placeholder="Ciudad"/>
+                </field>
+                <field name="city" position="attributes">
+                    <attribute name="readonly">1</attribute>
+                </field>
+            </field>
+        </record>
     </data>
 </openerp>
